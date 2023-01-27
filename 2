@@ -116,3 +116,12 @@ $ns at 2.9"$p3 send"
 
 $ns at 3.0 "finish"
 $ns run
+
+
+//*BEGIN{ drop=0; }
+{
+if($1= ="d" ) {
+drop++;
+} }
+END{
+printf("Total number of %s packets dropped due to congestion =%d\n",$5,drop); }
